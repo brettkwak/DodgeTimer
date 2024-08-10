@@ -10,23 +10,27 @@ MainWindow::MainWindow(QWidget *parent)
     QFile file("record.txt");
     file.open(QFile::ReadOnly|QFile::Text);
     QTextStream OpenFile(&file);
-    QString ConfigText;
-    ConfigText=OpenFile.readLine();
+    QString dodgeTime1;
+    dodgeTime1=OpenFile.readLine();
+
+    dodgeCount1 = 0;
 
     ui->setupUi(this);
 
-    ui->TLabel1->setText(ConfigText);
+    ui->TLabel1->setText(dodgeTime1);
 }
 
 MainWindow::~MainWindow()
 {
-    QFile("A.txt");
     delete ui;
 }
 
 
 void MainWindow::on_TButton1_clicked()
 {
+    dodgeCount1++;
+    ui->DLabel1->setText(QString::number(dodgeCount1));
+
     QDateTime timeDate = QDateTime::currentDateTime();
     QString timeString = timeDate.toString("yyyy.MM.dd hh:mm:ss");
     ui->TLabel1->setText(timeString);

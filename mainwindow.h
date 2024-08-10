@@ -22,5 +22,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    int dodgeCount1;
 };
 #endif // MAINWINDOW_H
