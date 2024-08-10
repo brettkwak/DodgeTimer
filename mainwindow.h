@@ -24,5 +24,9 @@ private:
     Ui::MainWindow *ui;
 
     int dodgeCount1;
+
+    void closeEvent(QCloseEvent *event);
+
+    QString timeString;
 };
 #endif // MAINWINDOW_H

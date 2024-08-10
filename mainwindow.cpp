@@ -11,13 +11,13 @@ MainWindow::MainWindow(QWidget *parent)
     file.open(QFile::ReadOnly|QFile::Text);
     QTextStream OpenFile(&file);
     QString dodgeTime1;
-    dodgeTime1=OpenFile.readLine();
-
-    dodgeCount1 = 0;
+    dodgeTime1 = OpenFile.readLine();
+    dodgeCount1 = OpenFile.readLine().toInt();
 
     ui->setupUi(this);
 
     ui->TLabel1->setText(dodgeTime1);
+    ui->DLabel1->setText(QString::number(dodgeCount1));
 }
 
 MainWindow::~MainWindow()
@@ -32,12 +32,14 @@ void MainWindow::on_TButton1_clicked()
     ui->DLabel1->setText(QString::number(dodgeCount1));
 
     QDateTime timeDate = QDateTime::currentDateTime();
-    QString timeString = timeDate.toString("yyyy.MM.dd hh:mm:ss");
+    timeString = timeDate.toString("yyyy.MM.dd hh:mm:ss");
     ui->TLabel1->setText(timeString);
+}
 
+void MainWindow::closeEvent(QCloseEvent *event)
+{
     QFile file("record.txt");
     file.open(QIODevice::WriteOnly | QIODevice::Text);
     QTextStream out(&file);
-    out << timeString;
+    out << timeString << "\n" << dodgeCount1;
 }
-
