@@ -1,0 +1,7 @@
+# CMake Build
+
+build/
+
+# User Setting
+
+CMakeLists.txt.user
