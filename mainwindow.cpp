@@ -11,12 +11,18 @@ MainWindow::MainWindow(QWidget *parent)
     QFile file("record.txt");
     file.open(QFile::ReadOnly|QFile::Text);
     QTextStream OpenFile(&file);
-    dodgeTime1 = OpenFile.readLine();
+    stringDodgeTime1 = OpenFile.readLine();
     dodgeCount1 = OpenFile.readLine().toInt();
+
+    qDebug() << stringDodgeTime1;
+
+    dateDodgeTime1 = QDateTime::fromString(stringDodgeTime1, "yyyy.MM.dd HH:mm:ss");
+
+    qDebug() << dateDodgeTime1;
 
     ui->setupUi(this);
 
-    ui->TLabel1->setText(dodgeTime1);
+    ui->TLabel1->setText(stringDodgeTime1);
     ui->DLabel1->setText(QString::number(dodgeCount1));
 
     QTimer *timer = new QTimer(this);
@@ -36,7 +42,7 @@ void MainWindow::on_TButton1_clicked()
     ui->DLabel1->setText(QString::number(dodgeCount1));
 
     timeDate = QDateTime::currentDateTime();
-    timeString = timeDate.toString("yyyy.MM.dd hh:mm:ss");
+    stringDodgeTime1 = timeDate.toString("yyyy.MM.dd hh:mm:ss");
     ui->TLabel1->setText(timeString);
 }
 
@@ -45,7 +51,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
     QFile file("record.txt");
     file.open(QIODevice::WriteOnly | QIODevice::Text);
     QTextStream out(&file);
-    out << timeString << "\n" << dodgeCount1;
+    out << stringDodgeTime1 << "\n" << dodgeCount1;
 }
 
 void MainWindow::on_Button_Reset_clicked()
@@ -58,14 +64,14 @@ void MainWindow::update(){
     qDebug() << "Update...";
 
     currentTime = QDateTime::currentDateTime();
-    timeDifference = timeDate.secsTo(currentTime);
-    qDebug() << timeDifference << dodgeCount1;
+    timeDifference = dateDodgeTime1.secsTo(currentTime);
+    qDebug() << stringDodgeTime1 << timeDifference << dodgeCount1;
     if (timeDifference > dodgeCount1*43200){
         dodgeCount1 = 0;
-        dodgeTime1 = "";
+        stringDodgeTime1 = "";
         qDebug() << "Reset!";
     }
     ui->DLabel1->setText(QString::number(dodgeCount1));
-    ui->TLabel1->setText(dodgeTime1);
+    ui->TLabel1->setText(stringDodgeTime1);
 
 }
