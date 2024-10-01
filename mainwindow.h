@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QDateTime>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -21,6 +22,7 @@ private slots:
     void on_TButton1_clicked();
 
     void on_Button_Reset_clicked();
+    void update();
 
 private:
     Ui::MainWindow *ui;
@@ -30,5 +32,9 @@ private:
     void closeEvent(QCloseEvent *event);
 
     QString timeString;
+
+    QDateTime timeDate;
+    QDateTime currentTime;
+    int timeDifference;
 };
 #endif // MAINWINDOW_H
