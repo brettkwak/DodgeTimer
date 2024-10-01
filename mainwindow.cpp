@@ -43,3 +43,10 @@ void MainWindow::closeEvent(QCloseEvent *event)
     QTextStream out(&file);
     out << timeString << "\n" << dodgeCount1;
 }
+
+void MainWindow::on_Button_Reset_clicked()
+{
+    timeString = "";
+    dodgeCount1 = 0;
+}
+

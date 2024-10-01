@@ -20,6 +20,8 @@ public:
 private slots:
     void on_TButton1_clicked();
 
+    void on_Button_Reset_clicked();
+
 private:
     Ui::MainWindow *ui;
 
