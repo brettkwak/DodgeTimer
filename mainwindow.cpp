@@ -16,9 +16,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     qDebug() << stringDodgeTime1;
 
-    dateDodgeTime1 = QDateTime::fromString(stringDodgeTime1, "yyyy.MM.dd HH:mm:ss");
+    lastDodgeTime1 = QDateTime::fromString(stringDodgeTime1, "yyyy.MM.dd HH:mm:ss");
 
-    qDebug() << dateDodgeTime1;
+    qDebug() << lastDodgeTime1;
 
     ui->setupUi(this);
 
@@ -41,9 +41,9 @@ void MainWindow::on_TButton1_clicked()
     dodgeCount1++;
     ui->DLabel1->setText(QString::number(dodgeCount1));
 
-    timeDate = QDateTime::currentDateTime();
-    stringDodgeTime1 = timeDate.toString("yyyy.MM.dd hh:mm:ss");
-    ui->TLabel1->setText(timeString);
+    lastDodgeTime1 = QDateTime::currentDateTime();
+    stringDodgeTime1 = lastDodgeTime1.toString("yyyy.MM.dd hh:mm:ss");
+    ui->TLabel1->setText(stringDodgeTime1);
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)
@@ -56,20 +56,32 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
 void MainWindow::on_Button_Reset_clicked()
 {
-    timeString = "";
+    stringDodgeTime1 = "No Penalty";
     dodgeCount1 = 0;
+    ui->TLabel1->setText(stringDodgeTime1);
+    ui->DLabel1->setText(QString::number(dodgeCount1));
 }
 
 void MainWindow::update(){
     qDebug() << "Update...";
 
     currentTime = QDateTime::currentDateTime();
-    timeDifference = dateDodgeTime1.secsTo(currentTime);
-    qDebug() << stringDodgeTime1 << timeDifference << dodgeCount1;
-    if (timeDifference > dodgeCount1*43200){
-        dodgeCount1 = 0;
-        stringDodgeTime1 = "";
+    timeDifference = lastDodgeTime1.secsTo(currentTime);
+    qDebug() << "String1 :" << stringDodgeTime1;
+    qDebug() << "Differ1 :" <<timeDifference;
+    qDebug() << "Count1 :" << dodgeCount1;
+    if (timeDifference > 43200){
+        dodgeCount1--;
+
+        lastDodgeTime1 = lastDodgeTime1.addSecs(43200);
         qDebug() << "Reset!";
+    }
+
+    if (dodgeCount1 == 0){
+        stringDodgeTime1 = "No Penalty";
+    }
+    else {
+        stringDodgeTime1 = lastDodgeTime1.toString("yyyy.MM.dd hh:mm:ss");
     }
     ui->DLabel1->setText(QString::number(dodgeCount1));
     ui->TLabel1->setText(stringDodgeTime1);

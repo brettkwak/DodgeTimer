@@ -33,10 +33,9 @@ private:
 
     QString timeString;
 
-    QDateTime timeDate;
     QDateTime currentTime;
     int timeDifference;
     QString stringDodgeTime1;
-    QDateTime dateDodgeTime1;
+    QDateTime lastDodgeTime1;
 };
 #endif // MAINWINDOW_H
