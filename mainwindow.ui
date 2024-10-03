@@ -17,34 +17,34 @@
    <widget class="QPushButton" name="TButton1">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>460</x>
       <y>60</y>
       <width>75</width>
       <height>24</height>
      </rect>
     </property>
     <property name="text">
-     <string>Click</string>
+     <string>Dodge</string>
     </property>
    </widget>
    <widget class="QLabel" name="TLabel1">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>90</y>
+      <x>320</x>
+      <y>30</y>
       <width>121</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>Label1</string>
     </property>
    </widget>
    <widget class="QLabel" name="DLabel1">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>120</y>
+      <x>370</x>
+      <y>60</y>
       <width>16</width>
       <height>16</height>
      </rect>
@@ -56,7 +56,7 @@
    <widget class="QPushButton" name="Button_Reset">
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>680</x>
       <y>60</y>
       <width>75</width>
       <height>24</height>
@@ -64,6 +64,45 @@
     </property>
     <property name="text">
      <string>Reset</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>48</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>1번 계정</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>60</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Dodge Stack</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>30</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Last Dodge Time</string>
     </property>
    </widget>
   </widget>
