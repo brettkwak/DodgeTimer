@@ -30,6 +30,7 @@ private:
     int dodgeCount1;
 
     void closeEvent(QCloseEvent *event);
+    void updateLabels();
 
     QString timeString;
 

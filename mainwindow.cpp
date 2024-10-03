@@ -14,16 +14,11 @@ MainWindow::MainWindow(QWidget *parent)
     stringDodgeTime1 = OpenFile.readLine();
     dodgeCount1 = OpenFile.readLine().toInt();
 
-    qDebug() << stringDodgeTime1;
-
     lastDodgeTime1 = QDateTime::fromString(stringDodgeTime1, "yyyy.MM.dd HH:mm:ss");
-
-    qDebug() << lastDodgeTime1;
 
     ui->setupUi(this);
 
-    ui->TLabel1->setText(stringDodgeTime1);
-    ui->DLabel1->setText(QString::number(dodgeCount1));
+    updateLabels();
 
     QTimer *timer = new QTimer(this);
     QObject::connect(timer, SIGNAL(timeout()), this, SLOT(update()));
@@ -39,11 +34,10 @@ MainWindow::~MainWindow()
 void MainWindow::on_TButton1_clicked()
 {
     dodgeCount1++;
-    ui->DLabel1->setText(QString::number(dodgeCount1));
-
     lastDodgeTime1 = QDateTime::currentDateTime();
     stringDodgeTime1 = lastDodgeTime1.toString("yyyy.MM.dd hh:mm:ss");
-    ui->TLabel1->setText(stringDodgeTime1);
+
+    updateLabels();
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)
@@ -58,8 +52,7 @@ void MainWindow::on_Button_Reset_clicked()
 {
     stringDodgeTime1 = "No Penalty";
     dodgeCount1 = 0;
-    ui->TLabel1->setText(stringDodgeTime1);
-    ui->DLabel1->setText(QString::number(dodgeCount1));
+    updateLabels();
 }
 
 void MainWindow::update(){
@@ -83,7 +76,12 @@ void MainWindow::update(){
     else {
         stringDodgeTime1 = lastDodgeTime1.toString("yyyy.MM.dd hh:mm:ss");
     }
+
+    updateLabels();
+
+}
+
+void MainWindow::updateLabels(){
     ui->DLabel1->setText(QString::number(dodgeCount1));
     ui->TLabel1->setText(stringDodgeTime1);
-
 }
