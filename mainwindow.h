@@ -73,5 +73,6 @@ private:
     QString stringDodgeTime5;
     QDateTime lastDodgeTime5;
 
+    int penalty_duration = 86400;
 };
 #endif // MAINWINDOW_H

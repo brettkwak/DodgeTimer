@@ -189,10 +189,10 @@ void MainWindow::on_RButton5_clicked()
 
 void MainWindow::updateTime1(){
     timeDifference1 = lastDodgeTime1.secsTo(currentTime);
-    if (timeDifference1 > 86400){
+    if (timeDifference1 > penalty_duration){
         dodgeCount1--;
 
-        lastDodgeTime1 = lastDodgeTime1.addSecs(86400);
+        lastDodgeTime1 = lastDodgeTime1.addSecs(penalty_duration);
         qDebug() << "Reset 1!";
     }
     if (dodgeCount1 == 0){
@@ -205,10 +205,10 @@ void MainWindow::updateTime1(){
 
 void MainWindow::updateTime2(){
     timeDifference2 = lastDodgeTime2.secsTo(currentTime);
-    if (timeDifference2 > 86400){
+    if (timeDifference2 > penalty_duration){
         dodgeCount2--;
 
-        lastDodgeTime2 = lastDodgeTime2.addSecs(86400);
+        lastDodgeTime2 = lastDodgeTime2.addSecs(penalty_duration);
         qDebug() << "Reset 2!";
     }
     if (dodgeCount2 == 0){
@@ -221,10 +221,10 @@ void MainWindow::updateTime2(){
 
 void MainWindow::updateTime3(){
     timeDifference3 = lastDodgeTime3.secsTo(currentTime);
-    if (timeDifference3 > 86400){
+    if (timeDifference3 > penalty_duration){
         dodgeCount3--;
 
-        lastDodgeTime3 = lastDodgeTime3.addSecs(86400);
+        lastDodgeTime3 = lastDodgeTime3.addSecs(penalty_duration);
         qDebug() << "Reset 3!";
     }
     if (dodgeCount3 == 0){
@@ -237,10 +237,10 @@ void MainWindow::updateTime3(){
 
 void MainWindow::updateTime4(){
     timeDifference4 = lastDodgeTime4.secsTo(currentTime);
-    if (timeDifference4 > 86400){
+    if (timeDifference4 > penalty_duration){
         dodgeCount4--;
 
-        lastDodgeTime4 = lastDodgeTime4.addSecs(86400);
+        lastDodgeTime4 = lastDodgeTime4.addSecs(penalty_duration);
         qDebug() << "Reset 4!";
     }
     if (dodgeCount4 == 0){
@@ -253,10 +253,10 @@ void MainWindow::updateTime4(){
 
 void MainWindow::updateTime5(){
     timeDifference5 = lastDodgeTime5.secsTo(currentTime);
-    if (timeDifference5 > 86400){
+    if (timeDifference5 > penalty_duration){
         dodgeCount5--;
 
-        lastDodgeTime5 = lastDodgeTime5.addSecs(86400);
+        lastDodgeTime5 = lastDodgeTime5.addSecs(penalty_duration);
         qDebug() << "Reset 5!";
     }
     if (dodgeCount5 == 0){
