@@ -189,10 +189,10 @@ void MainWindow::on_RButton5_clicked()
 
 void MainWindow::updateTime1(){
     timeDifference1 = lastDodgeTime1.secsTo(currentTime);
-    if (timeDifference1 > 43200){
+    if (timeDifference1 > 86400){
         dodgeCount1--;
 
-        lastDodgeTime1 = lastDodgeTime1.addSecs(43200);
+        lastDodgeTime1 = lastDodgeTime1.addSecs(86400);
         qDebug() << "Reset 1!";
     }
     if (dodgeCount1 == 0){
@@ -205,10 +205,10 @@ void MainWindow::updateTime1(){
 
 void MainWindow::updateTime2(){
     timeDifference2 = lastDodgeTime2.secsTo(currentTime);
-    if (timeDifference2 > 43200){
+    if (timeDifference2 > 86400){
         dodgeCount2--;
 
-        lastDodgeTime2 = lastDodgeTime2.addSecs(43200);
+        lastDodgeTime2 = lastDodgeTime2.addSecs(86400);
         qDebug() << "Reset 2!";
     }
     if (dodgeCount2 == 0){
@@ -221,10 +221,10 @@ void MainWindow::updateTime2(){
 
 void MainWindow::updateTime3(){
     timeDifference3 = lastDodgeTime3.secsTo(currentTime);
-    if (timeDifference3 > 43200){
+    if (timeDifference3 > 86400){
         dodgeCount3--;
 
-        lastDodgeTime3 = lastDodgeTime3.addSecs(43200);
+        lastDodgeTime3 = lastDodgeTime3.addSecs(86400);
         qDebug() << "Reset 3!";
     }
     if (dodgeCount3 == 0){
@@ -237,10 +237,10 @@ void MainWindow::updateTime3(){
 
 void MainWindow::updateTime4(){
     timeDifference4 = lastDodgeTime4.secsTo(currentTime);
-    if (timeDifference4 > 43200){
+    if (timeDifference4 > 86400){
         dodgeCount4--;
 
-        lastDodgeTime4 = lastDodgeTime4.addSecs(43200);
+        lastDodgeTime4 = lastDodgeTime4.addSecs(86400);
         qDebug() << "Reset 4!";
     }
     if (dodgeCount4 == 0){
@@ -253,10 +253,10 @@ void MainWindow::updateTime4(){
 
 void MainWindow::updateTime5(){
     timeDifference5 = lastDodgeTime5.secsTo(currentTime);
-    if (timeDifference5 > 43200){
+    if (timeDifference5 > 86400){
         dodgeCount5--;
 
-        lastDodgeTime5 = lastDodgeTime5.addSecs(43200);
+        lastDodgeTime5 = lastDodgeTime5.addSecs(86400);
         qDebug() << "Reset 5!";
     }
     if (dodgeCount5 == 0){
