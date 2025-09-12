@@ -188,81 +188,91 @@ void MainWindow::on_RButton5_clicked()
 
 
 void MainWindow::updateTime1(){
-    timeDifference1 = lastDodgeTime1.secsTo(currentTime);
-    if (timeDifference1 > penalty_duration){
-        dodgeCount1--;
 
-        lastDodgeTime1 = lastDodgeTime1.addSecs(penalty_duration);
-        qDebug() << "Reset 1!";
-    }
     if (dodgeCount1 == 0){
         stringDodgeTime1 = "No Penalty";
     }
     else {
+        timeDifference1 = lastDodgeTime1.secsTo(currentTime);
+        if (timeDifference1 > penalty_duration){
+            dodgeCount1--;
+
+            lastDodgeTime1 = lastDodgeTime1.addSecs(penalty_duration);
+            qDebug() << "Reset 1!";
+        }
+
         stringDodgeTime1 = lastDodgeTime1.toString("yyyy.MM.dd hh:mm:ss");
     }
 }
 
 void MainWindow::updateTime2(){
-    timeDifference2 = lastDodgeTime2.secsTo(currentTime);
-    if (timeDifference2 > penalty_duration){
-        dodgeCount2--;
 
-        lastDodgeTime2 = lastDodgeTime2.addSecs(penalty_duration);
-        qDebug() << "Reset 2!";
-    }
     if (dodgeCount2 == 0){
         stringDodgeTime2 = "No Penalty";
     }
     else {
+        timeDifference2 = lastDodgeTime2.secsTo(currentTime);
+        if (timeDifference2 > penalty_duration){
+            dodgeCount2--;
+
+            lastDodgeTime2 = lastDodgeTime2.addSecs(penalty_duration);
+            qDebug() << "Reset 2!";
+        }
+
         stringDodgeTime2 = lastDodgeTime2.toString("yyyy.MM.dd hh:mm:ss");
     }
 }
 
 void MainWindow::updateTime3(){
-    timeDifference3 = lastDodgeTime3.secsTo(currentTime);
-    if (timeDifference3 > penalty_duration){
-        dodgeCount3--;
 
-        lastDodgeTime3 = lastDodgeTime3.addSecs(penalty_duration);
-        qDebug() << "Reset 3!";
-    }
     if (dodgeCount3 == 0){
         stringDodgeTime3 = "No Penalty";
     }
     else {
+        timeDifference3 = lastDodgeTime3.secsTo(currentTime);
+        if (timeDifference3 > penalty_duration){
+            dodgeCount3--;
+
+            lastDodgeTime3 = lastDodgeTime3.addSecs(penalty_duration);
+            qDebug() << "Reset 3!";
+        }
+
         stringDodgeTime3 = lastDodgeTime3.toString("yyyy.MM.dd hh:mm:ss");
     }
 }
 
 void MainWindow::updateTime4(){
-    timeDifference4 = lastDodgeTime4.secsTo(currentTime);
-    if (timeDifference4 > penalty_duration){
-        dodgeCount4--;
 
-        lastDodgeTime4 = lastDodgeTime4.addSecs(penalty_duration);
-        qDebug() << "Reset 4!";
-    }
     if (dodgeCount4 == 0){
         stringDodgeTime4 = "No Penalty";
     }
     else {
+        timeDifference4 = lastDodgeTime4.secsTo(currentTime);
+        if (timeDifference4 > penalty_duration){
+            dodgeCount4--;
+
+            lastDodgeTime4 = lastDodgeTime4.addSecs(penalty_duration);
+            qDebug() << "Reset 4!";
+        }
+
         stringDodgeTime4 = lastDodgeTime4.toString("yyyy.MM.dd hh:mm:ss");
     }
 }
 
 void MainWindow::updateTime5(){
-    timeDifference5 = lastDodgeTime5.secsTo(currentTime);
-    if (timeDifference5 > penalty_duration){
-        dodgeCount5--;
 
-        lastDodgeTime5 = lastDodgeTime5.addSecs(penalty_duration);
-        qDebug() << "Reset 5!";
-    }
     if (dodgeCount5 == 0){
         stringDodgeTime5 = "No Penalty";
     }
     else {
+        timeDifference5 = lastDodgeTime5.secsTo(currentTime);
+        if (timeDifference5 > penalty_duration){
+            dodgeCount5--;
+
+            lastDodgeTime5 = lastDodgeTime5.addSecs(penalty_duration);
+            qDebug() << "Reset 5!";
+        }
+
         stringDodgeTime5 = lastDodgeTime5.toString("yyyy.MM.dd hh:mm:ss");
     }
 }
